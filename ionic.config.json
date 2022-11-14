@@ -1,0 +1,7 @@
+{
+  "name": "interota2023App",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
