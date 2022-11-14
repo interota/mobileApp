@@ -1,0 +1,36 @@
+- splashscreen
+- login
+- burger menu (program, reviews, home, contact, team)
+- alert team (send location) floating action button
+- send notification to user before 30min of each activity
+
+* Contact
+- Show contact related to the participant (Khalil, Labib, Team lead, Responsible)
++ Contact of every participant and every member of HOC team
+
+* Program
+- list of activities/days
+- when opening get the closest activity in the middle of the screen
+- highlight the most important activity
+- set template for each party
+- each activity is clickable
+- each activity have it rating
+
+* Activity details
+- Set some pictures
+- Set location
+- Description
+- Add review
+
+* Profile
+- Change picture
+- Change Password
+- See my reviews
+- Update my contact information
+
+* Review 
+- See latest reviews
+- See reviews by activity
+
+
+
