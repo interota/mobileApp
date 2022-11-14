@@ -33,6 +33,6 @@ export class LoginComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
-    this.fireService.login('ss', 'ss').then((result) => {} , (error)=> {});
+    this.fireService.login(this.f.email.value, this.f.password.value).then((result) => {} , (error)=> {});
   }
 }
