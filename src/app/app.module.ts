@@ -11,6 +11,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent],
@@ -20,6 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireAuthModule,
+    FirestoreModule,
+    AngularFireModule,
     AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
