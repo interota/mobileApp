@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ReviewServiceService } from '../FireStore/review-service.service';
 import { GenericServiceService } from '../generic-service.service';
+import { Review } from '../models/review';
 
 @Component({
   selector: 'app-first-day',
@@ -15,7 +17,7 @@ export class FirstDayPage implements OnInit {
     {
       "title":"Departure To Djerba",
       "time":"4:00 AM",
-      "desc":"We’re going to start our program with a very fun road trip. The buses are going to leave Tunis at 4am to go to Djerba and while you can sleep during the trip, we’re going to offer refreshments to keep you alert and to follow our touristic guide stories.",      
+      "desc":"We’re going to start our program with a very fun road trip. The buses are going to leave Tunis at 4am to go to Djerba and while you can sleep during the trip, we’re going to offer refreshments to keep you alert and to follow our touristic guide stories.",
     },
     {
       "title":"Breakfast in el Djem",
@@ -44,7 +46,7 @@ export class FirstDayPage implements OnInit {
       "desc":"After the opening ceremony, the participants can change into more comfortable clothes to enjoy a cozy dinner in the hotel."
     }
   ]
-  constructor(public router: Router, public genericService: GenericServiceService) { }
+  constructor(public router: Router, public genericService: GenericServiceService, public reviewSerice: ReviewServiceService) { }
 
   ngOnInit() {
   }
@@ -54,6 +56,10 @@ export class FirstDayPage implements OnInit {
   }
   navigateTo(activity: any, dayProgram: any)
   {
+
+    this.reviewSerice.addReview(new Review("", "Ahmed", "Act1", "Yezi mil bleda", 2));
+    console.log(this.reviewSerice.getAllReviews());
+
     this.router.navigate(['/activity-details'], { queryParams: { "activity": JSON.stringify(activity), "dayProgram": JSON.stringify(dayProgram)} });
   }
 }

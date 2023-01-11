@@ -7,15 +7,29 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ReviewServiceService {
-  constructor(private db: AngularFirestore) {}
+
+  result: Review[] = [];
+  constructor(private firestore: AngularFirestore) {}
+
+
 
   getAllReviews(): Review[] {
-    // eslint-disable-next-line prefer-const
-    let result: Review[] = [];
-    this.db
-      .collection('Review')
-      .valueChanges()
-      .subscribe((review) => result.push(/*review.entries()*/null));
-    return result;
+    this.firestore.collection('Review').get().toPromise().then(res => {
+      res.docs.forEach(d => this.result.push(Review.FromFireStore(d)));
+    });
+    return this.result;
   }
+
+  addReview(review: Review)
+  {
+    const obj =
+    {
+      "UserId" : review.userId,
+      "ActivityId" : review.activityId,
+      "Message" : review.message,
+      "Rating" : review.rating
+
+    };
+    this.firestore.collection('Review').add(obj);
+    }
 }
