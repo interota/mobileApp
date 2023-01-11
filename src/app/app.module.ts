@@ -12,6 +12,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FirestoreModule } from '@angular/fire/firestore';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent],
@@ -24,6 +25,7 @@ import { FirestoreModule } from '@angular/fire/firestore';
     FirestoreModule,
     AngularFireModule,
     AngularFireModule.initializeApp(environment.firebase),
+    Ng2SearchPipeModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

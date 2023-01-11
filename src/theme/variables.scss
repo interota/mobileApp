@@ -3,8 +3,12 @@
 
 /** Ionic CSS Variables **/
 :root {
+  
+  /** font **/
+  --ion-font-family: 'AppFont';
+
   /** primary **/
-  --ion-color-primary: #3880ff;
+  --ion-color-primary: #F70776;
   --ion-color-primary-rgb: 56, 128, 255;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
@@ -233,4 +237,22 @@
 
     --ion-card-background: #1e1e1e;
   }
+}
+@font-face {
+  font-family: 'AppFont';
+  src: url("../assets/fonts/Montserrat-VariableFont_wght.ttf"); //change url accordingly
+  }
+.app-Background-color
+{
+  background-color: #d0d0d0 !important;
+}
+
+ion-content {
+  --background: #f2f2f2;
+  //--color: #fff;
+}
+
+ion-toolbar{
+  --background: #F70776;
+  --color:white;
 }

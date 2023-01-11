@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Interota's Program</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-segment  (ionChange)="segmentChanged($event)" value="{{segment}}" scrollable>
+  <ion-segment-button value="firstDay">
+    <ion-label>
+      02/03/2023<br>Welcome Day
+    </ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="secondDay">
+    <ion-label>
+      03/03/2023<br>Tunisian Day
+    </ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="thirdDay">
+    <ion-label>
+      04/03/2023<br>Sahara Day
+    </ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="fourthDay">
+    <ion-label>
+      05/03/2023<br>Rotarian Day
+    </ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="fifthDay">
+    <ion-label>
+      06/03/2023<br>Last Day
+    </ion-label>
+  </ion-segment-button>
+</ion-segment>
+<ion-content>
+  <div 
+  class="animate__animated animate__slideInUp animate__fast paddingFAB"
+  *ngIf="segment === 'firstDay'"
+  
+>
+
+  <ion-card *ngFor="let activity of dayOne; let index = index" (click)="navigateTo(activity, dayOne)">
+    <ion-card-header>
+      <ion-card-title>{{activity.title}}</ion-card-title>
+      <ion-card-subtitle *ngIf="activity.time!=''">{{activity.time}}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content style="    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 95%;">
+      {{activity.desc}}
+    </ion-card-content>
+  </ion-card>
+</div>
+  <div
+    class="animate__animated animate__slideInUp animate__fast"
+    *ngIf="segment === 'secondDay'"
+    #slidingItem (swipeRight)="genericService.sendAlert()"
+  >
+  <ion-item-sliding *ngFor="let activity of dayOne; let index = index">
+  <ion-item>
+    <ion-card  (click)="navigateTo(activity, dayOne)">
+      <ion-card-header>
+        <ion-card-title>{{activity.title}}</ion-card-title>
+        <ion-card-subtitle *ngIf="activity.time!=''">{{activity.time}}</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content style="    white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      width: 95%;">
+        {{activity.desc}}
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+  <ion-item-options>
+    <ion-item-option>Favorite</ion-item-option>
+    <ion-item-option color="danger">Delete</ion-item-option>
+  </ion-item-options>
+
+  </ion-item-sliding>
+  </div>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" (click)="genericService.sendAlert()">
+    <ion-fab-button>
+      <ion-icon name="notifications-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
