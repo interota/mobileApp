@@ -16,13 +16,13 @@ export class ParticipantsContactPage implements OnInit {
       "phone":"+216 22870601",
       "email":"mezghanni.labib@gmail.com",
       "club":"Rotaract club tunis les berges du lac",
-      "district":"9010",
+      "district":"",
       "img":""
     },
     {
-      "name":"Labib Mezghanni2",
+      "name":"Ahmed Besbes",
       "country":"Tunisia",
-      "phone":"+216 22870601",
+      "phone":"+216 20531266",
       "email":"mezghanni.labib@gmail.com2",
       "club":"Rotaract club tunis les berges du lac",
       "district":"9010",
@@ -44,12 +44,12 @@ export class ParticipantsContactPage implements OnInit {
 
   ngOnInit() {
   }
-  
+
   async openModal(participant: any) {
     const modal = await this.modalController.create({
       component: MyModalPage,
       componentProps: {
-        "participant": JSON.stringify(participant),        
+        "participant": JSON.stringify(participant),
       }
     });
 
