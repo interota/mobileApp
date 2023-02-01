@@ -1,7 +1,7 @@
 import { QueryDocumentSnapshot } from '@angular/fire/compat/firestore';
 
 export abstract class FireStoreObject {
-  static fromFireStore(d: QueryDocumentSnapshot<unknown>): FireStoreObject {
+  static async fromFireStore(d: QueryDocumentSnapshot<unknown>): Promise<FireStoreObject> {
     throw new Error('not implemented!');
   }
 

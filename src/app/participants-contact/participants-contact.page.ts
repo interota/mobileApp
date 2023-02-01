@@ -1,5 +1,6 @@
+import { ProfileService } from './../FireStore/profile.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {  ModalController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 import { MyModalPage } from '../my-modal/my-modal.page';
 
 @Component({
@@ -8,49 +9,25 @@ import { MyModalPage } from '../my-modal/my-modal.page';
   styleUrls: ['./participants-contact.page.scss'],
 })
 export class ParticipantsContactPage implements OnInit {
-
-  public participants =[
-    {
-      "name":"Labib Mezghanni",
-      "country":"Tunisia",
-      "phone":"+216 22870601",
-      "email":"mezghanni.labib@gmail.com",
-      "club":"Rotaract club tunis les berges du lac",
-      "district":"",
-      "img":""
-    },
-    {
-      "name":"Ahmed Besbes",
-      "country":"Tunisia",
-      "phone":"+216 20531266",
-      "email":"mezghanni.labib@gmail.com2",
-      "club":"Rotaract club tunis les berges du lac",
-      "district":"9010",
-      "img":""
-    },
-    {
-      "name":"khalil Naccache",
-      "country":"Tunisia",
-      "phone":"+216 22870601",
-      "email":"mezghanni.labib@gmail.com3",
-      "club":"Rotaract club tunis les berges du lac",
-      "district":"9010",
-      "img":""
-    },
-  ]
-
+  public participants;
   filterTerm: string;
-  constructor(public modalController : ModalController) { }
+  constructor(
+    public modalController: ModalController,
+    private profileService: ProfileService
+  ) {}
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.participants = await this.profileService.getAll();
+    await this.profileService.updateCurrentPositionByUserId('CUkTUwrkl4NPnW7pa0KJYHlAbrn1');
+    //this.profileService.fillFromJson(null);
   }
 
   async openModal(participant: any) {
     const modal = await this.modalController.create({
       component: MyModalPage,
       componentProps: {
-        "participant": JSON.stringify(participant),
-      }
+        participant: JSON.stringify(participant),
+      },
     });
 
     modal.onDidDismiss().then((dataReturned) => {
@@ -62,5 +39,4 @@ export class ParticipantsContactPage implements OnInit {
 
     return await modal.present();
   }
-
 }

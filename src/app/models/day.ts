@@ -13,13 +13,13 @@ export class Day extends FireStoreObject {
   static getCollectionName(): string {
     return 'Day';
   }
-  static fromFireStore(d: QueryDocumentSnapshot<unknown>): FireStoreObject {
+  static async fromFireStore(d: QueryDocumentSnapshot<unknown>): Promise<Day> {
     const day = new Day();
     const acts: DocumentReference[] = d.get('activities');
     day.Activities = new Array(acts.length);
     for (let  index  = 0; index < acts.length; index++) {
       const element = acts[index];
-      element.get().then((t) => day.Activities[index] = Activity.fromFireStore(t));
+       day.Activities[index] =  await Activity.fromFireStore(await element.get());
     }
     return day;
   }

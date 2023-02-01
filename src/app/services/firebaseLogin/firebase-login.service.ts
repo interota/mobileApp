@@ -22,4 +22,5 @@ export class FirebaseLoginService {
   {
     this.angularFireAuthentication.signOut();
   }
+
 }

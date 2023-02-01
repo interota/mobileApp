@@ -7,7 +7,7 @@ import { FireStoreObject } from '../models/fire-store-object';
 })
 export abstract class FireStoreDocumentService<Model extends FireStoreObject> {
   constructor(
-    private firestore: AngularFirestore,
+    protected firestore: AngularFirestore,
     private classRef: typeof FireStoreObject
   ) {}
 
@@ -17,7 +17,7 @@ export abstract class FireStoreDocumentService<Model extends FireStoreObject> {
       .collection(this.classRef.getCollectionName())
       .get()
       .forEach((res) =>
-        res.docs.forEach((doc) => result.push(this.classRef.fromFireStore(doc)))
+        res.docs.forEach(async (doc) => result.push( await this.classRef.fromFireStore(doc)))
       );
     return result;
   }

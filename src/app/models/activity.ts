@@ -21,7 +21,7 @@ export class Activity extends FireStoreObject {
     return 'Activity';
   }
 
-  static fromFireStore(d: any): Activity {
+  static async fromFireStore(d: any): Promise<Activity> {
     const object = new Activity(
       d.id,
       d.get('Name'),
