@@ -1,6 +1,6 @@
 {
-	"appId": "io.ionic.starter",
-	"appName": "interota2023App",
-	"webDir": "www",
-	"bundledWebRuntime": false
+  "appId": "org.rotaract.interota",
+  "appName": "interota2023App",
+  "webDir": "www",
+  "bundledWebRuntime": false
 }
