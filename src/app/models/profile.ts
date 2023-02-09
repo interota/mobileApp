@@ -18,6 +18,7 @@ export class Profile extends FireStoreObject {
     public role: string = '',
     public responsibleId: string = '',
     public userId: string = '',
+    public deviceToken: string = ''
   ) {
     super();
   }
@@ -39,7 +40,8 @@ export class Profile extends FireStoreObject {
       d.get('CurrentLocation'),
       d.get('Role'),
       d.get('ResponsibleId'),
-      d.get('UserId')
+      d.get('UserId'),
+      d.get('DeviceToken')
     );
     return object;
   }
@@ -55,7 +57,8 @@ export class Profile extends FireStoreObject {
       CurrentLocation: this.currentLocation,
       Role: this.role,
       ResponsibleId : this.responsibleId,
-      UserId : this.userId
+      UserId : this.userId,
+      DeviceToken : this.deviceToken
     };
   }
 }
