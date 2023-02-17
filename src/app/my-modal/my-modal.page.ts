@@ -18,11 +18,11 @@ export class MyModalPage implements OnInit {
 
   ngOnInit() {
     console.table(this.navParams);
-    this.participant = JSON.parse(this.navParams.data["participant"]);
+    this.participant = JSON.parse(this.navParams.data.participant);
   }
 
   async closeModal() {
-    const onClosedData: string = "Wrapped Up!";
+    const onClosedData = 'Wrapped Up!';
     await this.modalController.dismiss(onClosedData);
   }
 

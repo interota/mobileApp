@@ -12,7 +12,7 @@
   <div *ngFor="let detail of dayProgram; let index = index">
   
   <ion-card  class="marginFAB" *ngIf="segment === detail.time">
-    <ion-img *ngIf="detail.img!=''" src={{detail.img}}></ion-img> 
+    <ion-img *ngIf="detail.img!==''" src={{detail.img}}></ion-img> 
     <ion-card-header>
       <ion-card-title>  {{detail.title}} </ion-card-title>
       <ion-card-subtitle>  {{detail.time}} </ion-card-subtitle>   

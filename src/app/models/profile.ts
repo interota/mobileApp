@@ -2,6 +2,7 @@ import {
   DocumentReference,
   QueryDocumentSnapshot,
 } from '@angular/fire/compat/firestore';
+import { GeoPoint } from 'firebase/firestore';
 import { FireStoreObject } from './fire-store-object';
 
 export class Profile extends FireStoreObject {
@@ -14,7 +15,7 @@ export class Profile extends FireStoreObject {
     public district: string = '',
     public club: string = '',
     public picture: string = '',
-    public currentLocation: GeolocationPosition = null,
+    public currentLocation: GeoPoint = null,
     public role: string = '',
     public responsibleId: string = '',
     public userId: string = '',
@@ -28,7 +29,7 @@ export class Profile extends FireStoreObject {
   }
 
   static async fromFireStore(d: QueryDocumentSnapshot<unknown>): Promise<Profile> {
-    let object = new Profile(
+    const object = new Profile(
       d.id,
       d.get('FullName'),
       d.get('Tel'),

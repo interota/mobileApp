@@ -61,7 +61,7 @@ export class AuthenticationPage implements OnInit {
     // Request permission to use push notifications
     // iOS will prompt user and return if they granted permission or not
     // Android will just grant without prompting
-    PushNotifications.requestPermissions().then(result => {
+    PushNotifications.requestPermissions().then((result) => {
       if (result.receive === 'granted') {
         // Register with Apple / Google to receive push via APNS/FCM
         PushNotifications.register();
@@ -71,7 +71,11 @@ export class AuthenticationPage implements OnInit {
     });
 
     PushNotifications.addListener('registration', (token: Token) => {
-      this.profileService.update('ns9hqDf4v7tmcasuXdtt', {DeviceToken: token.value})
+      this.fireService.getCurrentUser().then((user) => {
+        this.profileService.update(user.uid, {
+          DeviceToken: token.value,
+        });
+      });
     });
 
     PushNotifications.addListener('registrationError', (error: any) => {
@@ -82,16 +86,14 @@ export class AuthenticationPage implements OnInit {
       'pushNotificationReceived',
       (notification: PushNotificationSchema) => {
         alert('Push received: ' + JSON.stringify(notification));
-      },
+      }
     );
 
     PushNotifications.addListener(
       'pushNotificationActionPerformed',
       (notification: ActionPerformed) => {
         alert('Push action performed: ' + JSON.stringify(notification));
-      },
+      }
     );
-
   }
-
 }

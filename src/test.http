@@ -1,0 +1,22 @@
+
+
+
+POST https://fcm.googleapis.com/fcm/send
+Content-Type: application/json
+Authorization: Key=AAAAsz4_hcg:APA91bFXbAsjY1uBtXRVaojZrGNII95avnTXXVSEPAZ0jgZaSulxG-16fDWcJ72arGY0q41zmCTnHZ13bQjVjdQQhpJG5LyH3d7iqcxWlKa2y81y8vx7skgR2KUjv7YMMqIzEpdi2_Iw
+
+{
+ "notification": {
+  "title": "First Notification",
+  "body": "Hello from Jishnu!!"
+ },
+ "to" : "csoASExEQkuaaMZ11EoDfL:APA91bHsuguKJhFWw-5wJxW7hijAyWJeihbI1RtQrCGHGy54R9oukonoUojIXNzEnH36rfXIMSDqpijFkbJw-TDVAiCM5IomI0akLuJD1zAUIHcjl5f-gf6LrHBBYZi90nQ7xVWqE2IQ"
+}
+
+
+
+
+
+
+
+

@@ -8,8 +8,8 @@
 </ion-header>
 <ion-content class="ion-padding">
   <ion-card>
-    <ion-img *ngIf="participant.img!=''" src={{participant.img}}></ion-img> 
-    <ion-img *ngIf="participant.img==''" src="assets/logo-rose.png"></ion-img> 
+    <ion-img *ngIf="participant.img!==''" src={{participant.img}}></ion-img> 
+    <ion-img *ngIf="participant.img===''" src="assets/logo-rose.png"></ion-img> 
     <ion-card-header>
       <ion-card-title>  {{participant.name}} ({{participant.country}})</ion-card-title>
       <ion-card-subtitle>  {{participant.club}} ({{participant.district}}) </ion-card-subtitle>   

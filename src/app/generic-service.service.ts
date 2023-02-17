@@ -1,3 +1,4 @@
+import { MessagesService } from './services/messages/messages.service';
 import { Injectable } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 
@@ -5,7 +6,7 @@ import { AlertController } from '@ionic/angular';
   providedIn: 'root',
 })
 export class GenericServiceService {
-  constructor(private alertController: AlertController) {}
+  constructor(private alertController: AlertController, private messagesService: MessagesService) {}
 
   async sendAlert() {
     const confirmationAlert = await this.alertController.create({
@@ -26,7 +27,7 @@ export class GenericServiceService {
         {
           text: 'OK',
           handler: (data) => {
-            console.log(data.message);
+            this.messagesService.sendMessageAll("Alert", data.message);
             alert.dismiss();
             confirmationAlert.present();
           },

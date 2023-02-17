@@ -14,12 +14,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FirestoreModule } from '@angular/fire/firestore';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AngularFireMessagingModule } from '@angular/fire/compat/messaging';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent],
   imports: [
     BrowserModule,
+    HttpClientModule,
     ReactiveFormsModule,
     IonicModule.forRoot(),
     AppRoutingModule,

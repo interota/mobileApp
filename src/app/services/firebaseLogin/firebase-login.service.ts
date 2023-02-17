@@ -23,4 +23,9 @@ export class FirebaseLoginService {
     this.angularFireAuthentication.signOut();
   }
 
+  async getCurrentUser()
+  {
+     return (await this.angularFireAuthentication.currentUser);
+  }
+
 }

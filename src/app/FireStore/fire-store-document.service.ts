@@ -28,10 +28,10 @@ export abstract class FireStoreDocumentService<Model extends FireStoreObject> {
       .add(object.toObject());
   }
 
-  async update(id: string, field:Partial<any>)
+  async update(id: string, field: Partial<any>)
   {
     await this.firestore
       .doc('/'+this.classRef.getCollectionName()+'/'+id)
-      .update(field)
+      .update(field);
   }
 }

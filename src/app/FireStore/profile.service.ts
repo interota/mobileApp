@@ -78,14 +78,14 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
   async updateCurrentPositionByUserId(userId)
   {
     const tmp = await Geolocation.getCurrentPosition();
-    let point: GeoPoint = new GeoPoint(tmp.coords.latitude, tmp.coords.longitude);
+    const point: GeoPoint = new GeoPoint(tmp.coords.latitude, tmp.coords.longitude);
     await this.firestore
       .collection(Profile.getCollectionName(), (ref) =>
         ref.where('UserId', '==', userId)
       )
       .get()
       .forEach((res) =>
-        res.docs.forEach((d) => d.ref.update({'CurrentLocation' : point }))
+        res.docs.forEach((d) => d.ref.update({CurrentLocation : point }))
       );
   }
 

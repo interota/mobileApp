@@ -16,9 +16,6 @@ export class FcmProviderService {
 
   async getToken()
   {
-    if(this.platform.is('android'))
-    {
-      token = this.
-    }
+
   }
 }
