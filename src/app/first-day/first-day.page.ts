@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DayService } from '../FireStore/day.service';
 import { GenericServiceService } from '../generic-service.service';
@@ -11,7 +11,7 @@ import { Day } from '../models/day';
   templateUrl: './first-day.page.html',
   styleUrls: ['./first-day.page.scss'],
 })
-export class FirstDayPage implements OnInit {
+export class FirstDayPage implements OnInit, AfterViewInit {
   public segment = 1;
   public arr = new Array(25);
   public program: Day[] = [];
@@ -22,11 +22,13 @@ export class FirstDayPage implements OnInit {
     public dayService: DayService
   ) {}
 
-  ngOnInit() {
-    this.dayService.getAll().then((prgrm) => {
-      this.program = prgrm;
-      this.selectedDay = this.program[0].Activities;
-    });
+  ngAfterViewInit(): void {
+  }
+
+  async ngOnInit() {
+    this.program = await this.dayService.getAll();
+    await new Promise((f) => setTimeout(f, 1000));
+    this.selectedDay = this.program[0].Activities;
   }
 
   segmentChanged(ev: any) {

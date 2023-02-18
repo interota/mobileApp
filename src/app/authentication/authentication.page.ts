@@ -12,6 +12,9 @@ import {
   PushNotifications,
   Token,
 } from '@capacitor/push-notifications';
+
+import { Geolocation } from '@capacitor/geolocation';
+
 @Component({
   selector: 'app-authentication',
   templateUrl: './authentication.page.html',
@@ -49,10 +52,24 @@ export class AuthenticationPage implements OnInit {
     this.fireService.login(this.f.email.value, this.f.password.value).then(
       async (result) => {
         this.requestPermission();
+        this.registerPosition();
         this.router.navigateByUrl('/first-day');
       },
       async (error) => {
         console.log('failed');
+      }
+    );
+  }
+  registerPosition() {
+    Geolocation.watchPosition(
+      { enableHighAccuracy: true },
+      async (position, err) => {
+        if (position != null) {
+          this.profileService.updatePositionByUserId(
+            (await this.fireService.getCurrentUser()).uid,
+            position
+          );
+        }
       }
     );
   }
