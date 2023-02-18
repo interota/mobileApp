@@ -1,4 +1,5 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import {Component, OnInit } from '@angular/core';
+
 import { Router } from '@angular/router';
 import { DayService } from '../FireStore/day.service';
 import { ProfileService } from '../FireStore/profile.service';
@@ -25,11 +26,10 @@ export class FirstDayPage implements OnInit {
     public dayService: DayService,
   ) {}
 
-  ngOnInit() {
-    this.dayService.getAll().then((prgrm) => {
-      this.program = prgrm;
-      this.selectedDay = this.program[0].Activities;
-    });
+  async ngOnInit() {
+    this.program = await this.dayService.getAll();
+    await new Promise((f) => setTimeout(f, 1000));
+    this.selectedDay = this.program[0].Activities;
   }
 
   segmentChanged(ev: any) {

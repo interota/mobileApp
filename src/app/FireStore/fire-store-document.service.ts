@@ -12,12 +12,12 @@ export abstract class FireStoreDocumentService<Model extends FireStoreObject> {
   ) {}
 
   async getAll(): Promise<Model[]> {
-    const result = [];
+    let result = [];
     await this.firestore
       .collection(this.classRef.getCollectionName())
       .get()
-      .forEach((res) =>
-        res.docs.forEach(async (doc) => result.push( await this.classRef.fromFireStore(doc)))
+      .forEach(async (res) =>
+        await res.docs.forEach(async (doc) => result.push( await this.classRef.fromFireStore(doc)))
       );
     return result;
   }

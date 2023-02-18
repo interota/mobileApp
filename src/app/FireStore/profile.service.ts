@@ -4,8 +4,9 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { FireStoreDocumentService } from './fire-store-document.service';
 import { GeoPoint } from 'firebase/firestore';
-import { Geolocation } from '@capacitor/geolocation';
 import { FirebaseLoginService } from '../services/firebaseLogin/firebase-login.service';
+import { Geolocation, Position } from '@capacitor/geolocation';
+
 
 @Injectable({
   providedIn: 'root',
@@ -90,6 +91,19 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
   {
     const tmp = await Geolocation.getCurrentPosition();
     const point: GeoPoint = new GeoPoint(tmp.coords.latitude, tmp.coords.longitude);
+    await this.firestore
+      .collection(Profile.getCollectionName(), (ref) =>
+        ref.where('UserId', '==', userId)
+      )
+      .get()
+      .forEach((res) =>
+        res.docs.forEach((d) => d.ref.update({CurrentLocation : point }))
+      );
+  }
+
+  async updatePositionByUserId(userId, position:Position)
+  {
+    const point: GeoPoint = new GeoPoint(position.coords.latitude, position.coords.longitude);
     await this.firestore
       .collection(Profile.getCollectionName(), (ref) =>
         ref.where('UserId', '==', userId)
