@@ -35,7 +35,7 @@
   </ion-segment-button>
 </ion-segment>
 <ion-content>
-  <div class="animate__animated animate__slideInUp animate__fast paddingFAB" *ngIf="segment === 1">
+  <div class="animate__animated animate__slideInUp animate__fast paddingFAB">
 
     <ion-card *ngFor="let activity of selectedDay; let index = index" (click)="navigateTo(activity, selectedDay)">
       <ion-card-header>
@@ -50,31 +50,6 @@
         {{activity.description}}
       </ion-card-content>
     </ion-card>
-  </div>
-  <div class="animate__animated animate__slideInUp animate__fast" *ngIf="segment !== 2" #slidingItem
-    (swipeRight)="genericService.sendAlert()">
-    <ion-item-sliding *ngFor="let activity of selectedDay; let index = index">
-      <ion-item>
-        <ion-card (click)="navigateTo(activity, selectedDay)">
-          <ion-card-header>
-            <ion-card-title>{{activity.name}}</ion-card-title>
-            <ion-card-subtitle *ngIf="activity.time!==''">{{activity.time}}</ion-card-subtitle>
-          </ion-card-header>
-
-          <ion-card-content style="    white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      width: 95%;">
-            {{activity.description}
-          </ion-card-content>
-        </ion-card>
-      </ion-item>
-      <ion-item-options>
-        <ion-item-option>Favorite</ion-item-option>
-        <ion-item-option color="danger">Delete</ion-item-option>
-      </ion-item-options>
-
-    </ion-item-sliding>
   </div>
   <ion-fab slot="fixed" vertical="bottom" horizontal="end" (click)="genericService.sendAlert()">
     <ion-fab-button>

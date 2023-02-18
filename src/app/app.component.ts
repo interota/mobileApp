@@ -12,7 +12,7 @@ import { ToastController } from '@ionic/angular';
 export class AppComponent {
   public appPages = [
     { title: 'Home', url: '/first-day', icon: 'home' },
-    { title: 'Useful Contact', url: '/folder/Inbox', icon: 'call' },
+    { title: 'Useful Contact', url: '/useful-contact', icon: 'call' },
     { title: 'Review', url: '/folder/Archived', icon: 'star-half' },
     {
       title: 'Participants Contact',

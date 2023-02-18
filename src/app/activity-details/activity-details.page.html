@@ -12,13 +12,14 @@
   <div *ngFor="let detail of dayProgram; let index = index">
   
   <ion-card  class="marginFAB" *ngIf="segment === detail.time">
-    <ion-img *ngIf="detail.img!==''" src={{detail.img}}></ion-img> 
+    <ion-img *ngIf="detail.images.length===0" src="../../assets/logo-rose.png"></ion-img> 
+    <ion-img *ngIf="detail.images.length!==0" src={{detail.images}}></ion-img> 
     <ion-card-header>
-      <ion-card-title>  {{detail.title}} </ion-card-title>
-      <ion-card-subtitle>  {{detail.time}} </ion-card-subtitle>   
+      <ion-card-title>  {{detail.name}} </ion-card-title>
+      <ion-card-subtitle>  {{detail.actualTime}} </ion-card-subtitle>   
     </ion-card-header>
     <ion-card-content>
-      <ion-label color="medium"> {{detail.desc}}</ion-label>
+      <ion-label color="medium"> {{detail.description}}</ion-label>
  
       <ion-item lines="none">
         <ion-icon name="calendar-outline" slot="start"></ion-icon>

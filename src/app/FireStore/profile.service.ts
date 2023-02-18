@@ -5,6 +5,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { FireStoreDocumentService } from './fire-store-document.service';
 import { GeoPoint } from 'firebase/firestore';
 import { Geolocation } from '@capacitor/geolocation';
+import { FirebaseLoginService } from '../services/firebaseLogin/firebase-login.service';
 
 @Injectable({
   providedIn: 'root',
@@ -57,8 +58,18 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
     },
   ];
 
-  constructor(firestore: AngularFirestore) {
+  constructor(firestore: AngularFirestore,
+    private fireService: FirebaseLoginService,
+    ) {
     super(firestore, Profile);
+  }
+  async getUserDetails()
+  {
+    
+    this.fireService.getCurrentUser().then(async (user) => {
+      
+      return await this.getProfileByUserId(user.uid);      
+    });
   }
 
   async getProfileByUserId(userId: string): Promise<Profile> {

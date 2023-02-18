@@ -4,7 +4,7 @@ import { AngularFireMessaging } from '@angular/fire/compat/messaging';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ModalController, ToastController } from '@ionic/angular';
+import { AlertController, ModalController, ToastController } from '@ionic/angular';
 import { FirebaseLoginService } from '../services/firebaseLogin/firebase-login.service';
 import {
   ActionPerformed,
@@ -19,6 +19,7 @@ import {
 })
 export class AuthenticationPage implements OnInit {
   public form: FormGroup;
+  errorMessage: string;
 
   constructor(
     public modalCtrl: ModalController,
@@ -28,7 +29,8 @@ export class AuthenticationPage implements OnInit {
     private router: Router,
     private afMessaging: AngularFireMessaging,
     private profileService: ProfileService,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private alertController: AlertController
   ) {}
 
   get f() {
@@ -46,15 +48,32 @@ export class AuthenticationPage implements OnInit {
       console.log(this.form.invalid);
       return;
     }
+    
     this.fireService.login(this.f.email.value, this.f.password.value).then(
       async (result) => {
         this.requestPermission();
         this.router.navigateByUrl('/first-day');
       },
       async (error) => {
-        console.log('failed');
+        this.showError();
       }
     );
+  }
+  
+  async showError() {
+
+    const alert = await this.alertController.create({
+      header: 'Wrong credentials',
+      buttons: [
+        {
+          text: 'OK',
+          handler: (data) => {            
+            alert.dismiss();            
+          },
+        },
+      ]     
+    });
+    await alert.present();
   }
 
   requestPermission() {

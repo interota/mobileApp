@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DayService } from '../FireStore/day.service';
+import { ProfileService } from '../FireStore/profile.service';
 import { GenericServiceService } from '../generic-service.service';
 
 import { Activity } from '../models/activity';
 import { Day } from '../models/day';
+import { FirebaseLoginService } from '../services/firebaseLogin/firebase-login.service';
 
 @Component({
   selector: 'app-first-day',
@@ -16,10 +18,11 @@ export class FirstDayPage implements OnInit {
   public arr = new Array(25);
   public program: Day[] = [];
   public selectedDay: Activity[] = [];
+  public profile;
   constructor(
     public router: Router,
     public genericService: GenericServiceService,
-    public dayService: DayService
+    public dayService: DayService,
   ) {}
 
   ngOnInit() {
