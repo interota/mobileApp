@@ -37,6 +37,10 @@ const routes: Routes = [
   },  {
     path: 'useful-contact',
     loadChildren: () => import('./useful-contact/useful-contact.module').then( m => m.UsefulContactPageModule)
+  },
+  {
+    path: 'initiate-notification',
+    loadChildren: () => import('./initiate-notification/initiate-notification.module').then( m => m.InitiateNotificationPageModule)
   }
 
 ];

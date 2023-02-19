@@ -19,6 +19,11 @@ export class AppComponent {
       url: '/participants-contact',
       icon: 'people',
     },
+    {
+      title: 'Initiate Notification',
+      url: '/initiate-notification',
+      icon: 'notifications',
+    },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor() {}
