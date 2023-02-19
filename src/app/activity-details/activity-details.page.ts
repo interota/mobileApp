@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { GenericServiceService } from '../generic-service.service';
 
 @Component({
   selector: 'app-activity-details',
@@ -17,7 +18,9 @@ export class ActivityDetailsPage implements OnInit {
   public activityDetails: any;
   public dayProgram: any;
   public segment = '';
-  constructor(public route: ActivatedRoute) { }
+  constructor(public route: ActivatedRoute,
+    public genericService: GenericServiceService,
+    ) { }
 
   ngOnInit() {
     this.route.queryParams

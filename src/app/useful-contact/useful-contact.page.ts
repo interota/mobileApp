@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GenericServiceService } from '../generic-service.service';
 
 @Component({
   selector: 'app-useful-contact',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsefulContactPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    public genericService: GenericServiceService,
+  ) { }
 
   ngOnInit() {
   }

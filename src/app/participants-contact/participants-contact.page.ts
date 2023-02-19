@@ -2,6 +2,7 @@ import { ProfileService } from './../FireStore/profile.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { MyModalPage } from '../my-modal/my-modal.page';
+import { GenericServiceService } from '../generic-service.service';
 
 @Component({
   selector: 'app-participants-contact',
@@ -14,6 +15,7 @@ export class ParticipantsContactPage implements OnInit {
   filterTerm: string;
   constructor(
     public modalController: ModalController,
+    public genericService: GenericServiceService,
     private profileService: ProfileService
   ) {}
 
