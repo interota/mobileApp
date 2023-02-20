@@ -7,7 +7,7 @@ import { ModalController, NavParams } from '@ionic/angular';
   styleUrls: ['./my-modal.page.scss'],
 })
 export class MyModalPage implements OnInit {
-
+pic ="https://interota2023.com/assets/img/gallery/Khalil.png";
   participant: any;
   modelId: number;
 
