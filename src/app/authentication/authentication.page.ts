@@ -14,6 +14,7 @@ import {
 } from '@capacitor/push-notifications';
 
 import { Geolocation } from '@capacitor/geolocation';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-authentication',
@@ -33,7 +34,8 @@ export class AuthenticationPage implements OnInit {
     private afMessaging: AngularFireMessaging,
     private profileService: ProfileService,
     private toastController: ToastController,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private appComponent : AppComponent
   ) {}
 
   get f() {
@@ -56,7 +58,15 @@ export class AuthenticationPage implements OnInit {
       async (result) => {
         this.requestPermission();
         this.registerPosition();
+       // this.profileService.getUserDetails().finally();
+       // this.appComponent.userName=this.profileService.userName;
+       this.fireService.getCurrentUser().then(async (user) => {
+      
+        let profile = await this.profileService.getProfileByUserId(user.uid);
+        this.appComponent.userName = profile.fullName;      
+        
         this.router.navigateByUrl('/first-day');
+      });
       },
       async (error) => {
         this.showError();

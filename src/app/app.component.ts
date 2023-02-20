@@ -10,6 +10,7 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+  userName : string;
   public appPages = [
     { title: 'Home', url: '/first-day', icon: 'home' },
     { title: 'Useful Contact', url: '/useful-contact', icon: 'call' },
@@ -26,5 +27,6 @@ export class AppComponent {
     },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+  constructor() {    
+  }
 }
