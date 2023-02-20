@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content  lines="inset">
+<ion-content lines="inset">
   <ion-searchbar placeholder="Search..." [(ngModel)]="filterTerm" animated="true"></ion-searchbar>
   <ion-list>
     <ion-item-group>
@@ -16,29 +16,24 @@
           Team
         </ion-label>
       </ion-item-divider>
-    <ion-item *ngFor="let participant of team| filter:filterTerm" (click)="openModal(participant)">
-      <ion-icon name="person-circle-sharp" style="margin-right: 5px;"></ion-icon>
-      <ion-label>{{participant.fullName}}</ion-label>
-    </ion-item> 
-  </ion-item-group>
-
-      <ion-item-group>
-        <ion-item-divider>
-          <ion-label>
-            Participants
-          </ion-label>
-        </ion-item-divider>
-        <ion-item *ngFor="let participant of participants| filter:filterTerm" (click)="openModal(participant)">
-          <ion-icon name="person-circle-sharp" style="margin-right: 5px;"></ion-icon>
-          <ion-label>{{participant.fullName}}</ion-label>
-        </ion-item> 
+      <ion-item *ngFor="let participant of team| filter:filterTerm" (click)="openModal(participant)">
+        <ion-icon name="person-circle-sharp" style="margin-right: 5px;"></ion-icon>
+        <ion-label>{{participant.fullName}}</ion-label>
+      </ion-item>
     </ion-item-group>
-  
+
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label>
+          Participants
+        </ion-label>
+      </ion-item-divider>
+      <ion-item *ngFor="let participant of participants| filter:filterTerm" (click)="openModal(participant)">
+        <ion-icon name="person-circle-sharp" style="margin-right: 5px;"></ion-icon>
+        <ion-label>{{participant.fullName}}</ion-label>
+      </ion-item>
+    </ion-item-group>
+
   </ion-list>
-  
-<ion-fab slot="fixed" vertical="bottom" horizontal="end" (click)="genericService.sendAlert()">
-  <ion-fab-button>
-    <ion-icon name="notifications-outline"></ion-icon>
-  </ion-fab-button>
-</ion-fab>
+
 </ion-content>

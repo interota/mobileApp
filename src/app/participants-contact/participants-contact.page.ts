@@ -20,8 +20,8 @@ export class ParticipantsContactPage implements OnInit {
   ) {}
 
   async ngOnInit() {
-    this.participants = await this.profileService.getAll();
-    this.team = await this.profileService.getAll();
+    this.participants = await (await this.profileService.getAll()).filter(p => p.role == "Participant");
+    this.team = await (await this.profileService.getAll()).filter(p => p.role != "Participant");
     //await this.profileService.updateCurrentPositionByUserId('CUkTUwrkl4NPnW7pa0KJYHlAbrn1');
     //this.profileService.fillFromJson(null);
   }

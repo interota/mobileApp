@@ -1,4 +1,3 @@
-import { async } from '@angular/core/testing';
 import { Profile } from './../models/profile';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
@@ -7,7 +6,6 @@ import { GeoPoint } from 'firebase/firestore';
 import { FirebaseLoginService } from '../services/firebaseLogin/firebase-login.service';
 import { Geolocation, Position } from '@capacitor/geolocation';
 import { AppComponent } from '../app.component';
-
 
 @Injectable({
   providedIn: 'root',
@@ -100,9 +98,9 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
      "RespensibleId": "null"
     },
     {
-     "FullName": "Katharina Weingärtner",
+     "FullName": "Katharina Weing�rtner",
      "District": 1860,
-     "Club": "Hybrid Südwest",
+     "Club": "Hybrid S�dwest",
      "Country": "Germany",
      "Email": "kath.wein.internationales@gmail.com",
      "Tel": "+4917672945073",
@@ -148,9 +146,9 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
      "RespensibleId": "null"
     },
     {
-     "FullName": "Jérôme Coffin",
+     "FullName": "J�r�me Coffin",
      "District": 1660,
-     "Club": "Paris Quai d’Orsay",
+     "Club": "Paris Quai d�Orsay",
      "Country": "France",
      "Email": "Jeromecoffin@rotaract-paris-quaidorsay.fr",
      "Tel": "+671929088",
@@ -184,7 +182,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
      "RespensibleId": "null"
     },
     {
-     "FullName": "Entelë Seferaj",
+     "FullName": "Entel� Seferaj",
      "District": 1900,
      "Club": "ROTARACT Hagen",
      "Country": "Germany",
@@ -354,7 +352,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
     {
      "FullName": "Heilmar Becker",
      "District": 1660,
-     "Club": "Paris Quai d’Orsay",
+     "Club": "Paris Quai d�Orsay",
      "Country": "France",
      "Email": "rotary@heilmar.eu",
      "Tel": "+33 6 66 33 77 96",
@@ -390,7 +388,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
     {
      "FullName": "Apulskis Arvidas",
      "District": 1462,
-     "Club": "Klaipėdos Senamiesčio Rotaract",
+     "Club": "Klaipedos Senamiescio Rotaract",
      "Country": "Lithuania",
      "Email": "Arvidas.apulskis@gmail.com",
      "Tel": "+370 (685) 05 319",
@@ -450,7 +448,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
     {
      "FullName": "Aron Pammer",
      "District": 1911,
-     "Club": "Rotaract Club Budavár",
+     "Club": "Rotaract Club Budav�r",
      "Country": "Hungary",
      "Email": "aron.pammer@gmail.com",
      "Tel": "+36304483000",
@@ -474,7 +472,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
     {
      "FullName": "Madara Devko",
      "District": 1470,
-     "Club": "Rotaract København Nord",
+     "Club": "Rotaract K�benhavn Nord",
      "Country": "Denmark",
      "Email": "madara.devko@gmail.com",
      "Tel": "+4550272325",
@@ -496,9 +494,9 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
      "RespensibleId": "null"
     },
     {
-     "FullName": "Karla Araceli Cruz Gutiérrez",
+     "FullName": "Karla Araceli Cruz Guti�rrez",
      "District": 4185,
-     "Club": "Puebla de los Ángeles",
+     "Club": "Puebla de los �ngeles",
      "Country": "Mexico",
      "Email": "Karla.cruzgz@gmail.com",
      "Tel": "+5212223508101",
@@ -525,7 +523,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
      "Club": "Atlanta",
      "Country": "United States",
      "Email": "atoosa.arfa@gmail.com",
-     "Tel": "±17138268466",
+     "Tel": "�17138268466",
      "Picture": "null",
      "CurrentLocation": "null",
      "Role": "Participant",
@@ -556,7 +554,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
      "RespensibleId": "null"
     },
     {
-     "FullName": "Imke Häuserer",
+     "FullName": "Imke H�userer",
      "District": 1580,
      "Club": "Amsterdam",
      "Country": "Netherlands",
@@ -592,7 +590,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
      "RespensibleId": "null"
     },
     {
-     "FullName": "Luís Alves",
+     "FullName": "Lu�s Alves",
      "District": 1960,
      "Club": "Sintra",
      "Country": "Portugal",
@@ -640,7 +638,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
      "RespensibleId": "null"
     },
     {
-     "FullName": "André Ferreira",
+     "FullName": "Andr� Ferreira",
      "District": 1970,
      "Club": "Universidade do Porto",
      "Country": "Portugal",
@@ -676,7 +674,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
      "RespensibleId": "null"
     },
     {
-     "FullName": "Yolanda de la Peña Pola",
+     "FullName": "Yolanda de la Pe�a Pola",
      "District": 2202,
      "Club": "Madrid",
      "Country": "Spain",
@@ -690,7 +688,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
     {
      "FullName": "Ataulhaq Yar",
      "District": 1870,
-     "Club": "Mülheim an der Ruhr",
+     "Club": "M�lheim an der Ruhr",
      "Country": "Germany",
      "Email": "atayar@gmx.de",
      "Tel": "+4915774370624",
@@ -700,7 +698,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
      "RespensibleId": "null"
     },
     {
-     "FullName": "Yannick Müller",
+     "FullName": "Yannick M�ller",
      "District": 1860,
      "Club": "Bingen-Ingelheim am Rhein",
      "Country": "Germany",
@@ -772,7 +770,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
      "RespensibleId": "null"
     },
     {
-     "FullName": "Léa Cramzou",
+     "FullName": "L�a Cramzou",
      "District": 1660,
      "Club": "Club de Paris Doyen",
      "Country": "France",
@@ -784,7 +782,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
      "RespensibleId": "null"
     },
     {
-     "FullName": "Mario López",
+     "FullName": "Mario L�pez",
      "District": 2140,
      "Club": "Rotaract Brussels Coudenberg International",
      "Country": "Belgium",
@@ -820,7 +818,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
      "RespensibleId": "null"
     },
     {
-     "FullName": "Maria Inês Almeida",
+     "FullName": "Maria In�s Almeida",
      "District": 1960,
      "Club": "Rotaract Club de Almada",
      "Country": "Portugal",
@@ -832,7 +830,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
      "RespensibleId": "null"
     },
     {
-     "FullName": "João Mota",
+     "FullName": "Jo�o Mota",
      "District": 1970,
      "Club": "POMBAL",
      "Country": "Portugal",
@@ -846,7 +844,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
     {
      "FullName": "Ryad Chergui",
      "District": 1660,
-     "Club": "Paris Quai d’Orsay",
+     "Club": "Paris Quai d�Orsay",
      "Country": "France",
      "Email": "ryad.farouk.chergui@gmail.com",
      "Tel": "+33767262578",
@@ -858,7 +856,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
     {
      "FullName": "Madjda Nihel TEBBAL",
      "District": 1660,
-     "Club": "Paris Quais D’orsey",
+     "Club": "Paris Quais D�orsey",
      "Country": "France",
      "Email": "tebbalnihel5@gmail.com",
      "Tel": "+769599834",
@@ -868,7 +866,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
      "RespensibleId": "null"
     },
     {
-     "FullName": "Fábio Moreira",
+     "FullName": "F�bio Moreira",
      "District": 1970,
      "Club": "Rotaract Club Ermesinde",
      "Country": "Portugal",
@@ -882,7 +880,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
     {
      "FullName": "Maria Guedes",
      "District": 1970,
-     "Club": "Monção",
+     "Club": "Mon��o",
      "Country": "Portugal",
      "Email": "mariamiguelguedes@hotmail.com",
      "Tel": "+913543729",
@@ -916,7 +914,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
      "RespensibleId": "null"
     },
     {
-     "FullName": "João Pedro Artur Silva",
+     "FullName": "Jo�o Pedro Artur Silva",
      "District": 1960,
      "Club": "Rotaract Club Almada",
      "Country": "Portugal",
@@ -966,7 +964,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
     {
      "FullName": "Luis  Aranda ",
      "District": 4170,
-     "Club": "Valle de México ",
+     "Club": "Valle de M�xico ",
      "Country": "Mexico",
      "Email": "luis4170@gmail.com",
      "Tel": "+525541307999",
@@ -1108,7 +1106,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
      "RespensibleId": "null"
     },
     {
-     "FullName": "Emilia Fjäder",
+     "FullName": "Emilia Fj�der",
      "District": 1600,
      "Club": "Rotaract Club Scheveningen",
      "Country": "Netherlands",
@@ -1233,7 +1231,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
      "Club": "Firenze",
      "Country": "Italy",
      "Email": "juliakonkov.official@gmail.com",
-     "Tel": "‪+39&nbsp;338&nbsp;483&nbsp;2210‬",
+     "Tel": "?+39&nbsp;338&nbsp;483&nbsp;2210?",
      "Picture": "null",
      "CurrentLocation": "null",
      "Role": "Participant",
@@ -1254,7 +1252,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
     {
      "FullName": "Agnieszka Sikora",
      "District": 2231,
-     "Club": "Warszawa Śródmieście",
+     "Club": "Warszawa Sr�dmiescie",
      "Country": "Poland",
      "Email": "agnieszka.sikora.aru@gmail.com",
      "Tel": "+668157717",
@@ -1432,7 +1430,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
      "RespensibleId": "null"
     },
     {
-     "FullName": "Jürgen Alphonsus",
+     "FullName": "J�rgen Alphonsus",
      "District": 1910,
      "Club": "Wien-Stadtpark",
      "Country": "Austria",
@@ -1480,7 +1478,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
      "RespensibleId": "null"
     },
     {
-     "FullName": "Pia Müller",
+     "FullName": "Pia M�ller",
      "District": 1890,
      "Club": "Hamburg",
      "Country": "Germany",
@@ -1540,7 +1538,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
      "RespensibleId": "null"
     },
     {
-     "FullName": "Stéphanie LEROUX",
+     "FullName": "St�phanie LEROUX",
      "District": 1690,
      "Club": "Bordeaux",
      "Country": "France",
@@ -1661,7 +1659,7 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
     {
      "FullName": "Tanguy, Pierre Mont",
      "District": 1690,
-     "Club": "Angoulême Le Valois",
+     "Club": "Angoul�me Le Valois",
      "Country": "France",
      "Email": "tanguymontrotaract@gmail.com",
      "Tel": "+33634952470",
@@ -1725,556 +1723,468 @@ export class ProfileService extends FireStoreDocumentService<Profile> {
    ];
 
 
-
-
-  obj = [    
+  obj = [
     {
-      "FullName": "Adan Bouzekri",
-      "Tel": "+216 26 667 665",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "ISG",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-      }
-    
-  },
-  {
-    
-      "FullName": "Ahmed Besbes",
-      "Tel": "+216 20 531 266",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "ESSECT",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-      }
-    
-  },
-  {
-    
-      "FullName": "Ahmed Boukhtioua",
-      "Tel": "+216 55 869 069",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "ESPRIT",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-      }
-    
-  },
-  {
-      "FullName": "Ala Abdesslam",
-      "Tel": "+216 52 669 468",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "MAHDIA",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-      }
-  },
-  {
-      "FullName": "Amine Khediri",
-      "Tel": "+216 24 118 443",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": {
-      },
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-      }
-  },
-  {
-      "FullName": "Aziz Dabbech",
-      "Tel": "+216 54 568 094",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "Cosmopolitain",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-      }
-  },
-  {
-      "FullName": "Bochra Mellouli",
-      "Tel": "+216 20 799 793",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "IHEC",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-      }
-  },
-  {
-      "FullName": "Chamsse Mansour",
-      "Tel": "+216 20 096 117",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "Ariana la rose",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-      }
-  },
-  {
-      "FullName": "Fatma Baccar",
-      "Tel": "+216 94 768 277",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "ESSECT",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-      }
-  },
-  {
-      "FullName": "Hiba Zayani",
-      "Tel": "+216 27 919 905",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "Tunis Business School",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-    }
-  },
-  {
-      "FullName": "Houssem Ben Salah",
-      "Tel": "+216 26 667 675",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "Ezzahra Saint Germain",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-    }
-  },
-  {
-      "FullName": "Khalil Naccache",
-      "Tel": "+216 52 128 123",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "ESSECT",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-    }
-  },
-  {
-      "FullName": "Labib Mezghanni",
-      "Tel": "+216 22 870 601",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "Les berges du lac",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-    }
-  },
-  {
-      "FullName": "Mahdi Abbassi",
-      "Tel": "+216 23 463 075",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "ESSECT",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-      }
-  },
-  {
-      "FullName": "Mahdi Kallel",
-      "Tel": "+216 58 424 320",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "Golfe",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-    }
-  },
-  {
-      "FullName": "Maryem Sehli",
-      "Tel": "+216 95 595 746",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "Rades",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-    }
-  },
-  {
-      "FullName": "Maya Kamoun",
-      "Tel": "+216 28 893 399",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "Tunis Doyen",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-    }
-  },
-  {
-      "FullName": "Mohamed Aziz Ben Ammar",
-      "Tel": "+216 20 611 366",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "Rades",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-    }
-  },
-  {
-      "FullName": "Mohamed Kanzari",
-      "Tel": "+216",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "Marsa Carthage",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-    }
-  },
-  {
-      "FullName": "Nadia Trabelsi",
-      "Tel": "+216 94 294 791",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "Carnoy",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-    }
-  },
-  {
-      "FullName": "Nawres Hamdi",
-      "Tel": "+216 24 605 336",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "ISCAE Manouba",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-    }
-  },
-  {
-      "FullName": "Omar Dekhili",
-      "Tel": "+216 58 816 066",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "ESSECT",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-    }
-  },
-  {
-      "FullName": "Oussema Ghabry",
-      "Tel": "+216 29 502 553",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "Rades",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-    }
-  },
-  {
-      "FullName": "Outail Ouni",
-      "Tel": "+216 51 258 745",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "Megrine",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-    }
-  },
-  {
-      "FullName": "Rana Righi",
-      "Tel": "+216 96 386 790",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "Sidi bou said el beji",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-    }
-  },
-  {
-      "FullName": "Rania Achour",
-      "Tel": "+216 20 498 699",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "ISG",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-    }
-  },
-  {
-      "FullName": "Salma Tlatli",
-      "Tel": "+216 98 309 667",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "Cosmopolitain",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-    }
-  },
-  {
-      "FullName": "Sana Aouam",
-      "Tel": "+216",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "ISG",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-    }
-  },
-  {
-      "FullName": "Tarek Hamlaoui",
-      "Tel": "+216 90 207 934",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "Ennaser",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-    }
-  },
-  {
-      "FullName": "Yasmin Ben Moussa",
-      "Tel": "+216 52 119 943",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "Sidi bou said el beji",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-    }
-  },
-  {
-      "FullName": "Yasmine Turki",
-      "Tel": "+216 22 011 144",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "Phoenix Sud",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-      }
-  },
-  {
-      "FullName": "Yassine Korbi",
-      "Tel": "+216 52 297 798",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "Sousse",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-      }
-  },
-  {
-      "FullName": "Wissem Messaoudi",
-      "Tel": "+216 52 251 267",
-      "Picture": {
-      },
-      "Country": "Tunisia",
-      "District": "9010",
-      "Club": "Les berges du lac",
-      "CurrentLocation": {
-      },
-      "Role": "Team",
-      "RespensibleId": {
-    }
-  }
-];
+      FullName: 'Adan Bouzekri',
+      Tel: '+216 26 667 665',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'ISG',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Ahmed Besbes',
+      Tel: '+216 20 531 266',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'ESSECT',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Ahmed Boukhtioua',
+      Tel: '+216 55 869 069',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'ESPRIT',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Ala Abdesslam',
+      Tel: '+216 52 669 468',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'MAHDIA',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Amine Khediri',
+      Tel: '+216 24 118 443',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: '',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Aziz Dabbech',
+      Tel: '+216 54 568 094',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'Cosmopolitain',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Bochra Mellouli',
+      Tel: '+216 20 799 793',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'IHEC',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Chamsse Mansour',
+      Tel: '+216 20 096 117',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'Ariana la rose',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Fatma Baccar',
+      Tel: '+216 94 768 277',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'ESSECT',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Hiba Zayani',
+      Tel: '+216 27 919 905',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'Tunis Business School',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Houssem Ben Salah',
+      Tel: '+216 26 667 675',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'Ezzahra Saint Germain',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Khalil Naccache',
+      Tel: '+216 52 128 123',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'ESSECT',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Labib Mezghanni',
+      Tel: '+216 22 870 601',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'Les berges du lac',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Mahdi Abbassi',
+      Tel: '+216 23 463 075',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'ESSECT',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Mahdi Kallel',
+      Tel: '+216 58 424 320',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'Golfe',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Maryem Sehli',
+      Tel: '+216 95 595 746',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'Rades',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Maya Kamoun',
+      Tel: '+216 28 893 399',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'Tunis Doyen',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Mohamed Aziz Ben Ammar',
+      Tel: '+216 20 611 366',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'Rades',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Mohamed Kanzari',
+      Tel: '+216',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'Marsa Carthage',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Nadia Trabelsi',
+      Tel: '+216 94 294 791',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'Carnoy',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Nawres Hamdi',
+      Tel: '+216 24 605 336',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'ISCAE Manouba',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Omar Dekhili',
+      Tel: '+216 58 816 066',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'ESSECT',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Oussema Ghabry',
+      Tel: '+216 29 502 553',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'Rades',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Outail Ouni',
+      Tel: '+216 51 258 745',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'Megrine',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Rana Righi',
+      Tel: '+216 96 386 790',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'Sidi bou said el beji',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Rania Achour',
+      Tel: '+216 20 498 699',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'ISG',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Salma Tlatli',
+      Tel: '+216 98 309 667',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'Cosmopolitain',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Sana Aouam',
+      Tel: '+216',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'ISG',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Tarek Hamlaoui',
+      Tel: '+216 90 207 934',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'Ennaser',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Yasmin Ben Moussa',
+      Tel: '+216 52 119 943',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'Sidi bou said el beji',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Yasmine Turki',
+      Tel: '+216 22 011 144',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'Phoenix Sud',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Yassine Korbi',
+      Tel: '+216 52 297 798',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'Sousse',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+    {
+      FullName: 'Wissem Messaoudi',
+      Tel: '+216 52 251 267',
+      Picture: {},
+      Country: 'Tunisia',
+      District: '9010',
+      Club: 'Les berges du lac',
+      CurrentLocation: {},
+      Role: 'Team',
+      RespensibleId: {},
+    },
+  ];
 
 
 
 
   userName : string;
   constructor(firestore: AngularFirestore,
-    private fireService: FirebaseLoginService,    
+    private fireService: FirebaseLoginService,
     ) {
     super(firestore, Profile);
   }
-  async getUserDetails()
-  {
-    
-    this.fireService.getCurrentUser().then(async (user) => {
-      
-      let profile = await this.getProfileByUserId(user.uid);
-      this.userName = profile.fullName;      
-      return profile;
-    });
+  async getUserDetails(): Promise<Profile> {
+    let user = await this.fireService.getCurrentUser();
+    let profile = await this.getProfileByUserId(user.uid);
+
+    this.userName = profile.fullName;
+    return profile;
   }
 
   async getProfileByUserId(userId: string): Promise<Profile> {
     let profile = null;
-    await this.firestore
-      .collection(Profile.getCollectionName(), (ref) =>
-        ref.where('UserId', '==', userId)
-      )
-      .get()
-      .forEach((res) =>
-        res.docs.forEach((d) => (profile = Profile.fromFireStore(d)))
-      );
+    if (userId == null || userId == '') {
+      await this.firestore
+        .collection(Profile.getCollectionName(), (ref) =>
+          ref.where('UserId', '==', userId)
+        )
+        .get()
+        .forEach((res) =>
+          res.docs.forEach((d) => (profile = Profile.fromFireStore(d)))
+        );
+    }
     return profile;
   }
 
-
-  async updateCurrentPositionByUserId(userId)
-  {
+  async updateCurrentPositionByUserId(userId) {
     const tmp = await Geolocation.getCurrentPosition();
-    const point: GeoPoint = new GeoPoint(tmp.coords.latitude, tmp.coords.longitude);
+    const point: GeoPoint = new GeoPoint(
+      tmp.coords.latitude,
+      tmp.coords.longitude
+    );
     await this.firestore
       .collection(Profile.getCollectionName(), (ref) =>
         ref.where('UserId', '==', userId)
       )
       .get()
       .forEach((res) =>
-        res.docs.forEach((d) => d.ref.update({CurrentLocation : point }))
+        res.docs.forEach((d) => d.ref.update({ CurrentLocation: point }))
       );
   }
 
-  async updatePositionByUserId(userId, position:Position)
-  {
-    const point: GeoPoint = new GeoPoint(position.coords.latitude, position.coords.longitude);
+  async updatePositionByUserId(userId, position: Position) {
+    const point: GeoPoint = new GeoPoint(
+      position.coords.latitude,
+      position.coords.longitude
+    );
     await this.firestore
       .collection(Profile.getCollectionName(), (ref) =>
         ref.where('UserId', '==', userId)
       )
       .get()
       .forEach((res) =>
-        res.docs.forEach((d) => d.ref.update({CurrentLocation : point }))
+        res.docs.forEach((d) => d.ref.update({ CurrentLocation: point }))
       );
   }
 
-  // fillFromJson(json: any[]) {
-  //   this.obj.forEach((profile) => {
-  //     this.add(
-  //       new Profile(
-  //         '',
-  //         profile.FullName,
-  //         profile.Tel,
-  //         '',
-  //         profile.Country,
-  //         profile.District,
-  //         profile.Club,
-  //         profile.Picture,
-  //         null,
-  //         profile.Role
-  //       )
-  //     );
-  //   });
-  // }
+  async updateTokenByUserId(userId, token: string) {
+    await this.firestore
+      .collection(Profile.getCollectionName(), (ref) =>
+        ref.where('UserId', '==', userId)
+      )
+      .get()
+      .forEach((res) =>
+        res.docs.forEach((d) => d.ref.update({ DeviceToken: token }))
+      );
+  }
+  fillFromJson(json: any[]) {
+    this.obj.forEach((profile) => {
+      this.fireService.angularFireAuthentication
+        .createUserWithEmailAndPassword(profile.Email, '123456789')
+        .then((user) => {
+          this.add(
+            new Profile(
+              '',
+              profile.FullName,
+              profile.Tel,
+              profile.Email,
+              profile.Country,
+              profile.District,
+              profile.Club,
+              '',
+              null,
+              profile.Role,
+              null,
+              user.user.uid,
+              null
+            )
+          );
+        });
+    });
+  }
 }

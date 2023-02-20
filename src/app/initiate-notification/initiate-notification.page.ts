@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MessagesService } from '../services/messages/messages.service';
 
 @Component({
   selector: 'app-initiate-notification',
@@ -9,21 +10,21 @@ export class InitiateNotificationPage implements OnInit {
 
   message : string ;
   title= "Message from HOC Team";
-  constructor() { }
+  constructor(private messagesService: MessagesService) { }
 
   ngOnInit() {
   }
 
   sendToAll()
-  {    
-    console.log(this.message);
+  {
+    this.messagesService.sendMessageAll(this.title, this.message);
   }
   sendToTeam()
   {
-    console.log(this.message);
+    this.messagesService.sendMessageTeam(this.title, this.message);
   }
   sendToParticipants()
   {
-    console.log(this.message);
+    this.messagesService.sendMessageParticipants(this.title, this.message);
   }
 }

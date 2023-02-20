@@ -32,9 +32,6 @@ const routes: Routes = [
     loadChildren: () => import('./authentication/authentication.module').then( m => m.AuthenticationPageModule)
   },
   {
-    path: 'map',
-    loadChildren: () => import('./map/map.module').then( m => m.MapPageModule)
-  },  {
     path: 'useful-contact',
     loadChildren: () => import('./useful-contact/useful-contact.module').then( m => m.UsefulContactPageModule)
   },

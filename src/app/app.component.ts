@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { AngularFireMessaging } from '@angular/fire/compat/messaging';
 import { tap } from 'rxjs';
 import { ToastController } from '@ionic/angular';
-
+import { LocalNotifications} from '@capacitor/local-notifications'
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -27,6 +27,18 @@ export class AppComponent {
     },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {    
+  constructor() {
+    LocalNotifications.schedule({
+      notifications: [
+        {
+          title: 'Reminder',
+          body: 'This is the body of the notification',
+          id: 1,
+          schedule: { at: new Date(Date.now() + 1000 * 5) }, // Schedule the notification to appear 5 seconds from now
+        }
+      ]
+    });
+
   }
+
 }

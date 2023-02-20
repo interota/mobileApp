@@ -6,7 +6,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 })
 export class FirebaseLoginService {
 
-  constructor(private angularFireAuthentication: AngularFireAuth) { }
+  constructor(public angularFireAuthentication: AngularFireAuth) { }
   login(emailaddress, password) {
     return new Promise((resolve, reject) => {
         this.angularFireAuthentication

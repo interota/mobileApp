@@ -42,9 +42,10 @@ export class AuthenticationPage implements OnInit {
     return this.form.controls;
   }
   ngOnInit() {
+
     this.form = this.formBuilder.group({
       email: ['', Validators.required],
-      password: ['', Validators.required],
+      password: ['123456789'],
     });
   }
 
@@ -53,18 +54,19 @@ export class AuthenticationPage implements OnInit {
       console.log(this.form.invalid);
       return;
     }
-    
+
     this.fireService.login(this.f.email.value, this.f.password.value).then(
       async (result) => {
+        await this.registerPosition();
         this.requestPermission();
         this.registerPosition();
        // this.profileService.getUserDetails().finally();
        // this.appComponent.userName=this.profileService.userName;
        this.fireService.getCurrentUser().then(async (user) => {
-      
+
         let profile = await this.profileService.getProfileByUserId(user.uid);
-        this.appComponent.userName = profile.fullName;      
-        
+        this.appComponent.userName = profile.fullName;
+
         this.router.navigateByUrl('/first-day');
       });
       },
@@ -74,7 +76,7 @@ export class AuthenticationPage implements OnInit {
     );
   }
 
-  
+
   async showError() {
 
     const alert = await this.alertController.create({
@@ -82,16 +84,16 @@ export class AuthenticationPage implements OnInit {
       buttons: [
         {
           text: 'OK',
-          handler: (data) => {            
-            alert.dismiss();            
+          handler: (data) => {
+            alert.dismiss();
           },
         },
-      ]     
+      ]
     });
     await alert.present();
   }
-  registerPosition() {
-    Geolocation.watchPosition(
+  async registerPosition() {
+    await Geolocation.watchPosition(
       { enableHighAccuracy: true },
       async (position, err) => {
         if (position != null) {
@@ -117,12 +119,8 @@ export class AuthenticationPage implements OnInit {
       }
     });
 
-    PushNotifications.addListener('registration', (token: Token) => {
-      this.fireService.getCurrentUser().then((user) => {
-        this.profileService.update(user.uid, {
-          DeviceToken: token.value,
-        });
-      });
+    PushNotifications.addListener('registration', async (token: Token) => {
+      this.profileService.updateTokenByUserId((await this.fireService.getCurrentUser()).uid, token.value)
     });
 
     PushNotifications.addListener('registrationError', (error: any) => {

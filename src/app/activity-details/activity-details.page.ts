@@ -1,6 +1,9 @@
+import { GeoPoint } from 'firebase/firestore';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GenericServiceService } from '../generic-service.service';
+import { Browser } from '@capacitor/browser';
+
 
 @Component({
   selector: 'app-activity-details',
@@ -35,6 +38,18 @@ export class ActivityDetailsPage implements OnInit {
 
   segmentChanged(ev: any) {
     this.segment = ev.detail.value;
+  }
+
+  async openTOS(position:GeoPoint) {
+
+    const latitude = position.latitude; // Replace with your desired latitude
+    const longitude = position.longitude; // Replace with your desired longitude
+
+  const url = `https://www.google.com/maps?saddr=My+Location&daddr=${latitude},${longitude}`;
+
+    // Use the InAppBrowser plugin to open the URL
+    await Browser.open({url : url, windowName: '_system'});
+    //await Browser.open({ url: 'http://capacitorjs.com/' });
   }
 
 }

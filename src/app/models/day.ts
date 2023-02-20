@@ -9,7 +9,7 @@ import { FireStoreObject } from './fire-store-object';
 
 export class Day extends FireStoreObject {
   public Activities: Activity[] = [];
-
+  public Order: string;
   static getCollectionName(): string {
     return 'Day';
   }
@@ -21,6 +21,7 @@ export class Day extends FireStoreObject {
       const element = acts[index];
        day.Activities[index] =  await Activity.fromFireStore(await element.get());
     }
+    day.Order = d.id
     return day;
   }
 

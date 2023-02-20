@@ -9,58 +9,71 @@
 
 <ion-content>
   <ion-list lines="full">
-    <ion-item>
+    <ion-item *ngIf="buddy != null">
       <ion-thumbnail slot="start">
-        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        <img alt="Silhouette of mountains" src="../../assets/team/{{buddy.picture}}" />
       </ion-thumbnail>
-      <ion-label>Buddy</ion-label>
-      <ion-icon name="call" slot="end"></ion-icon>
+      <ion-label>{{buddy.fullName}}</ion-label>
+      <a href="tel:+20531266">
+
+        <ion-icon name="call" slot="end"></ion-icon>
+      </a>
     </ion-item>
     <ion-item>
       <ion-thumbnail slot="start">
-        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        <img alt="Silhouette of mountains" src="../../assets/team/labib.jpg" />
       </ion-thumbnail>
       <ion-label>Labib</ion-label>
-      <ion-icon name="call" slot="end"></ion-icon>
+      <a href="tel:+20531266">
+        <ion-icon name="call" slot="end"></ion-icon>
+      </a>
     </ion-item>
     <ion-item>
       <ion-thumbnail slot="start">
-        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        <img alt="Silhouette of mountains" src="../../assets/team/khalil.png" />
       </ion-thumbnail>
       <ion-label>Khalil</ion-label>
-      <ion-icon name="call" slot="end"></ion-icon>
+      <a href="tel:+20531266">
+        <ion-icon name="call" slot="end"></ion-icon>
+      </a>
     </ion-item>
   </ion-list>
-  
+
   <ion-list lines="full">
     <ion-item>
       <ion-thumbnail slot="start">
-        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        <img alt="Silhouette of mountains" src="../../assets/team/hotel.jpg" />
       </ion-thumbnail>
       <ion-label>Hotel</ion-label>
-      <ion-icon name="call" slot="end"></ion-icon>
+      <a href="tel:+20531266">
+        <ion-icon name="call" slot="end"></ion-icon>
+      </a>
     </ion-item>
     <ion-item>
       <ion-thumbnail slot="start">
-        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        <img alt="Silhouette of mountains" src="../../assets/team/samu.jpg" />
       </ion-thumbnail>
       <ion-label>SAMU</ion-label>
-      <ion-icon name="call" slot="end"></ion-icon>
+      <a href="tel:+20531266">
+        <ion-icon name="call" slot="end"></ion-icon>
+      </a>
     </ion-item>
     <ion-item>
       <ion-thumbnail slot="start">
-        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        <img alt="Silhouette of mountains" src="../../assets/team/civil.png" />
       </ion-thumbnail>
-      <ion-label>Police</ion-label>
-      <ion-icon name="call" slot="end"></ion-icon>
+      <ion-label>Civil Protection</ion-label>
+      <a href="tel:+20531266">
+        <ion-icon name="call" slot="end"></ion-icon>
+      </a>
     </ion-item>
   </ion-list>
 
 
- 
-<ion-fab slot="fixed" vertical="bottom" horizontal="end" (click)="genericService.sendAlert()">
-  <ion-fab-button>
-    <ion-icon name="notifications-outline"></ion-icon>
-  </ion-fab-button>
-</ion-fab>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" (click)="genericService.sendAlert()">
+    <ion-fab-button>
+      <ion-icon name="notifications-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

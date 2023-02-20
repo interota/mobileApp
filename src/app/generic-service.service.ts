@@ -1,3 +1,4 @@
+import { ProfileService } from './FireStore/profile.service';
 import { MessagesService } from './services/messages/messages.service';
 import { Injectable } from '@angular/core';
 import { AlertController } from '@ionic/angular';
@@ -6,7 +7,11 @@ import { AlertController } from '@ionic/angular';
   providedIn: 'root',
 })
 export class GenericServiceService {
-  constructor(private alertController: AlertController, private messagesService: MessagesService) {}
+  constructor(
+    private alertController: AlertController,
+    private messagesService: MessagesService,
+    private profileService: ProfileService
+  ) {}
 
   async sendAlert() {
     const confirmationAlert = await this.alertController.create({
@@ -26,8 +31,12 @@ export class GenericServiceService {
         },
         {
           text: 'OK',
-          handler: (data) => {
-            this.messagesService.sendMessageAll("Alert", data.message);
+          handler: async (data) => {
+            let partName = (await this.profileService.getUserDetails()).fullName;
+            this.messagesService.sendMessageAll(
+              'From : ' + partName,
+              data.message
+            );
             alert.dismiss();
             confirmationAlert.present();
           },
