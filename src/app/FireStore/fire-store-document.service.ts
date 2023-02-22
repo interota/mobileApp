@@ -22,8 +22,8 @@ export abstract class FireStoreDocumentService<Model extends FireStoreObject> {
     return result;
   }
 
-  add(object: Model) {
-    this.firestore
+   add(object: Model) {
+    return  this.firestore
       .collection(this.classRef.getCollectionName())
       .add(object.toObject());
   }

@@ -1,5 +1,4 @@
-import { Time } from '@angular/common';
-import { QueryDocumentSnapshot } from '@angular/fire/compat/firestore';
+import { Timestamp } from 'firebase/firestore';
 import { FireStoreObject } from './fire-store-object';
 
 
@@ -13,7 +12,8 @@ export class Activity extends FireStoreObject {
     public images: string[] = [],
     public location: GeolocationPosition = null,
     public rating: number = 0,
-    public actualTime: string = ''
+    public actualTime: string = '',
+    public timestamp: Timestamp = null
   ) {
     super();
   }
@@ -31,7 +31,8 @@ export class Activity extends FireStoreObject {
       d.get('Images'),
       d.get('Location'),
       d.get('Rating'),
-      d.get('ActualTime')
+      d.get('ActualTime'),
+      d.get('Timestamp')
     );
     return object;
   }
@@ -45,6 +46,7 @@ export class Activity extends FireStoreObject {
       Location: this.location,
       Rating: this.rating,
       ActualTime: this.actualTime,
+      Timestamp: this.timestamp
     };
   }
 }

@@ -23,7 +23,6 @@ export class ParticipantsContactPage implements OnInit {
     this.participants = await (await this.profileService.getAll()).filter(p => p.role == "Participant");
     this.team = await (await this.profileService.getAll()).filter(p => p.role != "Participant");
     //await this.profileService.updateCurrentPositionByUserId('CUkTUwrkl4NPnW7pa0KJYHlAbrn1');
-    //this.profileService.fillFromJson(null);
   }
 
   async openModal(participant: any) {

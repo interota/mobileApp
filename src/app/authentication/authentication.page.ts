@@ -4,7 +4,11 @@ import { AngularFireMessaging } from '@angular/fire/compat/messaging';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlertController, ModalController, ToastController } from '@ionic/angular';
+import {
+  AlertController,
+  ModalController,
+  ToastController,
+} from '@ionic/angular';
 import { FirebaseLoginService } from '../services/firebaseLogin/firebase-login.service';
 import {
   ActionPerformed,
@@ -15,6 +19,9 @@ import {
 
 import { Geolocation } from '@capacitor/geolocation';
 import { AppComponent } from '../app.component';
+import { LocalNotifications } from '@capacitor/local-notifications';
+import { ActivityService } from '../FireStore/activity.service';
+import { Timestamp } from 'firebase/firestore';
 
 @Component({
   selector: 'app-authentication',
@@ -24,6 +31,7 @@ import { AppComponent } from '../app.component';
 export class AuthenticationPage implements OnInit {
   public form: FormGroup;
   errorMessage: string;
+  static notificationId: number = 0;
 
   constructor(
     public modalCtrl: ModalController,
@@ -35,14 +43,14 @@ export class AuthenticationPage implements OnInit {
     private profileService: ProfileService,
     private toastController: ToastController,
     private alertController: AlertController,
-    private appComponent : AppComponent
+    private appComponent: AppComponent,
+    private activityService: ActivityService
   ) {}
 
   get f() {
     return this.form.controls;
   }
   ngOnInit() {
-
     this.form = this.formBuilder.group({
       email: ['', Validators.required],
       password: ['123456789'],
@@ -60,15 +68,17 @@ export class AuthenticationPage implements OnInit {
         await this.registerPosition();
         this.requestPermission();
         this.registerPosition();
-       // this.profileService.getUserDetails().finally();
-       // this.appComponent.userName=this.profileService.userName;
-       this.fireService.getCurrentUser().then(async (user) => {
-
-        let profile = await this.profileService.getProfileByUserId(user.uid);
-        this.appComponent.userName = profile.fullName;
-
+        this.registerLocalNotifications();
+        // this.profileService.getUserDetails().finally();
+        // this.appComponent.userName=this.profileService.userName;
+        this.profileService
+          .getProfileByUserId(
+            (await this.fireService.angularFireAuthentication.currentUser).uid
+          )
+          .then((p) => {
+            this.appComponent.userName = p.fullName;
+          });
         this.router.navigateByUrl('/first-day');
-      });
       },
       async (error) => {
         this.showError();
@@ -76,9 +86,27 @@ export class AuthenticationPage implements OnInit {
     );
   }
 
+  registerLocalNotifications() {
+    this.activityService.getAll().then((activities) => {
+      activities.forEach((activity) => {
+        let time = activity.timestamp.seconds - 15 * 60;
+        let date = new Timestamp(time, 0);
+        LocalNotifications.schedule({
+          notifications: [
+            {
+              title: 'Reminder: ' + activity.name,
+              body: 'Next Activity is in about 30 Minutes',
+              id: AuthenticationPage.notificationId,
+              schedule: { at: date.toDate() }, // Schedule the notification to appear 5 seconds from now
+            },
+          ],
+        });
+        AuthenticationPage.notificationId++;
+      });
+    });
+  }
 
   async showError() {
-
     const alert = await this.alertController.create({
       header: 'Wrong credentials',
       buttons: [
@@ -88,7 +116,7 @@ export class AuthenticationPage implements OnInit {
             alert.dismiss();
           },
         },
-      ]
+      ],
     });
     await alert.present();
   }
@@ -120,7 +148,10 @@ export class AuthenticationPage implements OnInit {
     });
 
     PushNotifications.addListener('registration', async (token: Token) => {
-      this.profileService.updateTokenByUserId((await this.fireService.getCurrentUser()).uid, token.value)
+      this.profileService.updateTokenByUserId(
+        (await this.fireService.getCurrentUser()).uid,
+        token.value
+      );
     });
 
     PushNotifications.addListener('registrationError', (error: any) => {
