@@ -13,7 +13,13 @@
               <ion-label>{{ p.title }}</ion-label>
             </ion-item>
           </div>
-          <div *ngIf="p.title !=='Initiate Notification'">
+          <div *ngIf="p.title ==='Direction to Hotel'">
+            <ion-item routerDirection="root" (click)="roadToHotel()" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </div>
+          <div *ngIf="p.title !=='Initiate Notification' && p.title!=='Direction to Hotel'">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
               <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
               <ion-label>{{ p.title }}</ion-label>
