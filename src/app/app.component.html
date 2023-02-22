@@ -7,10 +7,18 @@
           <ion-note>{{userName}}</ion-note>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+            <div *ngIf="p.title ==='Initiate Notification' && (userName.toLowerCase() ==='labib mezghanni'||userName.toLowerCase() ==='khalil naccache'||userName.toLowerCase() ==='outail ouni'||userName.toLowerCase() ==='ahmed besbes')">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
               <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
               <ion-label>{{ p.title }}</ion-label>
             </ion-item>
+          </div>
+          <div *ngIf="p.title !=='Initiate Notification'">
+            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </div>
           </ion-menu-toggle>
         </ion-list>
 

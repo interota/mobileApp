@@ -35,7 +35,9 @@ export class FirstDayPage implements OnInit, AfterViewInit, ViewWillEnter {
     private loadingCtrl: LoadingController
   ) {}
   async ionViewWillEnter() {
-    this.segment = 1;
+ //   this.segment = 1;
+
+    if(this.program.length==0){
     this.program = await (await this.dayService.getAll());
     let loading = this.loadingCtrl.create({
       message : "Loading ..."
@@ -51,6 +53,7 @@ export class FirstDayPage implements OnInit, AfterViewInit, ViewWillEnter {
     }
     );
     this.selectedDay = this.program[0].Activities;
+  }
   }
 
   async ngAfterViewInit(): Promise<void> {

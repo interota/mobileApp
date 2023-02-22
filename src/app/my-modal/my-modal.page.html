@@ -9,7 +9,7 @@
 <ion-content class="ion-padding">
   <ion-card>
     <ion-img *ngIf="participant.picture!==''" src="{{participant.Picture}}"></ion-img>
-    <ion-img *ngIf="participant.picture===''" src="../../assets/logo-rose.png"></ion-img>
+    <ion-img *ngIf="participant.picture===''" src="http://www.interota2023.com/assets/img/logo/logo-rose.png"></ion-img>
     <ion-card-header>
       <ion-card-title>  {{participant.fullName}} ({{participant.country}})</ion-card-title>
       <ion-card-subtitle>  {{participant.club}} ({{participant.district}}) </ion-card-subtitle>
@@ -30,9 +30,9 @@
       </ion-item>
     </a>
 
-    <ion-button (click)=" openTOS(participant.currentLocation)">
+    <!-- <ion-button (click)=" openTOS(participant.currentLocation)">
       Open in Maps
-    </ion-button>
+    </ion-button> -->
 
 
 
