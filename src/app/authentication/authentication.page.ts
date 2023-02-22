@@ -63,6 +63,13 @@ export class AuthenticationPage implements OnInit {
         this.genericService.receiveAlert(notification.notification.data.body);
       }
     );
+
+    PushNotifications.addListener(
+      'pushNotificationReceived',
+      (notification: PushNotificationSchema) => {
+        this.genericService.receiveAlert(notification.body);
+      }
+    );
   }
 
   onSubmit() {
@@ -166,12 +173,7 @@ export class AuthenticationPage implements OnInit {
       alert('Error on registration: ' + JSON.stringify(error));
     });
 
-    PushNotifications.addListener(
-      'pushNotificationReceived',
-      (notification: PushNotificationSchema) => {
-        this.genericService.receiveAlert(notification.body);
-      }
-    );
+
 
 
   }
