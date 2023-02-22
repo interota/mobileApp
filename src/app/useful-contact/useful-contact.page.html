@@ -11,20 +11,20 @@
   <ion-list lines="full">
     <ion-item *ngIf="buddy != null">
       <ion-thumbnail slot="start">
-        <img alt="Silhouette of mountains" src="../../assets/team/{{buddy.picture}}" />
+        <img alt="" src="../../assets/team/{{buddy.picture}}" />
       </ion-thumbnail>
       <ion-label>{{buddy.fullName}}</ion-label>
-      <a href="tel:+20531266">
+      <a href="tel:{{buddy.tel}}">
 
         <ion-icon name="call" slot="end"></ion-icon>
       </a>
     </ion-item>
     <ion-item>
       <ion-thumbnail slot="start">
-        <img alt="Silhouette of mountains" src="../../assets/team/labib.jpg" />
+        <img alt="" src="../../assets/team/labib.jpg" />
       </ion-thumbnail>
-      <ion-label>Labib</ion-label>
-      <a href="tel:+20531266">
+      <ion-label>Labib Mezghanni</ion-label>
+      <a href="tel:+21622870601">
         <ion-icon name="call" slot="end"></ion-icon>
       </a>
     </ion-item>
@@ -32,8 +32,8 @@
       <ion-thumbnail slot="start">
         <img alt="Silhouette of mountains" src="../../assets/team/khalil.png" />
       </ion-thumbnail>
-      <ion-label>Khalil</ion-label>
-      <a href="tel:+20531266">
+      <ion-label>Khalil Naccache</ion-label>
+      <a href="tel:+21652128123">
         <ion-icon name="call" slot="end"></ion-icon>
       </a>
     </ion-item>
@@ -44,8 +44,8 @@
       <ion-thumbnail slot="start">
         <img alt="Silhouette of mountains" src="../../assets/team/hotel.jpg" />
       </ion-thumbnail>
-      <ion-label>Hotel</ion-label>
-      <a href="tel:+20531266">
+      <ion-label>Hotel Palm Azure</ion-label>
+      <a href="tel:+21675750700">
         <ion-icon name="call" slot="end"></ion-icon>
       </a>
     </ion-item>
@@ -54,7 +54,7 @@
         <img alt="Silhouette of mountains" src="../../assets/team/samu.jpg" />
       </ion-thumbnail>
       <ion-label>SAMU</ion-label>
-      <a href="tel:+20531266">
+      <a href="tel:190">
         <ion-icon name="call" slot="end"></ion-icon>
       </a>
     </ion-item>
@@ -63,7 +63,7 @@
         <img alt="Silhouette of mountains" src="../../assets/team/civil.png" />
       </ion-thumbnail>
       <ion-label>Civil Protection</ion-label>
-      <a href="tel:+20531266">
+      <a href="tel:198">
         <ion-icon name="call" slot="end"></ion-icon>
       </a>
     </ion-item>
