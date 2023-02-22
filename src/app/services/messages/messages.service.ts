@@ -15,6 +15,9 @@ export class MessagesService {
 
   sendMessage(title: String, msg: string, tokens: String[]) {
     const body = {
+      data:{
+        body: msg
+      },
       notification: {
         title: title,
         body: msg,
