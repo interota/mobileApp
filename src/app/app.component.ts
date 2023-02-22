@@ -10,7 +10,7 @@ import { LocalNotifications} from '@capacitor/local-notifications'
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  //userName ="Ahmed Besbes";
+  // userName ="Ahmed Besbes";
   userName :string;
   public appPages = [
     { title: 'Home', url: '/first-day', icon: 'home' },

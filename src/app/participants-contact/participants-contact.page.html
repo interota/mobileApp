@@ -17,7 +17,13 @@
         </ion-item>
         <div class="ion-padding" slot="content">
         <ion-item *ngFor="let participant of team| filter:filterTerm" (click)="openModal(participant)">
-          <ion-icon name="person-circle-sharp" style="margin-right: 5px;"></ion-icon>
+          <!-- <ion-icon name="person-circle-sharp" style="margin-right: 5px;"></ion-icon> -->
+          <ion-chip color="primary" class="name-chip" [ngStyle]="{'background-color': getRandomColor(participant.fullName.charAt(0))}">
+            <ion-label style="color:white"><b>
+              {{participant.fullName.charAt(0).toUpperCase()}}
+              </b>
+            </ion-label>
+          </ion-chip>
           <ion-label>{{participant.fullName}}</ion-label>
         </ion-item>
         </div>
@@ -28,7 +34,12 @@
         </ion-item>
         <div class="ion-padding" slot="content">
           <ion-item *ngFor="let participant of participants| filter:filterTerm" (click)="openModal(participant)">
-            <ion-icon name="person-circle-sharp" style="margin-right: 5px;"></ion-icon>
+            <ion-chip color="primary" class="name-chip" [ngStyle]="{'background-color': getRandomColor(participant.fullName.charAt(0))}">
+              <ion-label style="color:white"><b>
+                {{participant.fullName.charAt(0).toUpperCase()}}
+                </b>
+              </ion-label>
+            </ion-chip>
             <ion-label>{{participant.fullName}}</ion-label>
           </ion-item>
       </div>
@@ -60,5 +71,9 @@
     </ion-item-group> -->
 
   </ion-list>
-
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" (click)="genericService.sendAlert()">
+    <ion-fab-button>
+      <ion-icon name="notifications-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

@@ -256,3 +256,16 @@ ion-toolbar{
   --background: #F70776;
   --color:white;
 }
+// .name-chip {
+//   $r: random(256);
+//   $g: random(256);
+//   $b: random(256);
+//   background-color: rgb($r, $g, $b);
+//   color: #fff;
+//   &:hover {
+//     background-color: lighten(rgb($r, $g, $b), 10%);
+//   }
+//   &:active {
+//     background-color: darken(rgb($r, $g, $b), 10%);
+//   }
+// }
