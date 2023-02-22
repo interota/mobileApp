@@ -4,7 +4,7 @@
       <ion-back-button mode="md" text="">
       </ion-back-button>
     </ion-buttons>
-    <ion-title>activityDetails</ion-title>
+    <ion-title>{{this.dayname}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -20,20 +20,28 @@
     </ion-card-header>
     <ion-card-content>
 
-      <ion-button (click)=" openTOS(detail.Location)">
-        Open in Maps
-      </ion-button>
+
       <ion-label color="medium"> {{detail.description}}</ion-label>
 
       <ion-item lines="none">
         <ion-icon name="calendar-outline" slot="start"></ion-icon>
-        <ion-label> movie.release_date | date: 'y'}}</ion-label>
+        <ion-label>{{dayDate}}</ion-label>
       </ion-item>
+<div>
+  <ion-grid>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+      <ion-button class="border-radius:90px !important" (click)=" openTOS(detail.Location)">
+        <ion-icon name="map-outline"></ion-icon>
+        &nbsp;Get Directions
+      </ion-button>
+      </ion-col>
+      <ion-col></ion-col>
 
-      <ion-item lines="none">
-        <ion-icon name="cash-outline" slot="start"></ion-icon>
-        <ion-label> movie.budget| currency: 'USD' }}</ion-label>
-      </ion-item>
+    </ion-row>
+    </ion-grid>
+    </div>
     </ion-card-content>
   </ion-card>
 

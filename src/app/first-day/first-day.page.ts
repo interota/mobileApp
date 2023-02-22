@@ -21,6 +21,13 @@ export class FirstDayPage implements OnInit, AfterViewInit, ViewWillEnter {
   public selectedDay: Activity[] = [];
   public profile;
 
+  public dayNames ={
+    1:"Welcome Day__2nd March 2023",
+    2:"Rotarian Day__3rd March 2023",
+    3:"Sahara Day__4th March 2023",
+    4:"Tunisian Day__5th March 2023",
+    5:"Last Day__6th March 2023"
+  }
   constructor(
     public router: Router,
     public genericService: GenericServiceService,
@@ -28,6 +35,7 @@ export class FirstDayPage implements OnInit, AfterViewInit, ViewWillEnter {
     private loadingCtrl: LoadingController
   ) {}
   async ionViewWillEnter() {
+    this.segment = 1;
     this.program = await (await this.dayService.getAll());
     let loading = this.loadingCtrl.create({
       message : "Loading ..."
@@ -58,11 +66,12 @@ export class FirstDayPage implements OnInit, AfterViewInit, ViewWillEnter {
     this.segment = ev.detail.value;
     this.selectedDay = this.program[this.segment - 1].Activities;
   }
-  navigateTo(activity: any, dayProgram: any) {
+  navigateTo(activity: any, dayProgram: any, segment: any) {
     this.router.navigate(['/activity-details'], {
       queryParams: {
         activity: JSON.stringify(activity),
         dayProgram: JSON.stringify(dayProgram),
+        segment: this.dayNames[segment]
       },
     });
   }
