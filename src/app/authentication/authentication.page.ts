@@ -22,6 +22,7 @@ import { AppComponent } from '../app.component';
 import { LocalNotifications } from '@capacitor/local-notifications';
 import { ActivityService } from '../FireStore/activity.service';
 import { Timestamp } from 'firebase/firestore';
+import { GenericServiceService } from '../generic-service.service';
 
 @Component({
   selector: 'app-authentication',
@@ -44,7 +45,8 @@ export class AuthenticationPage implements OnInit {
     private toastController: ToastController,
     private alertController: AlertController,
     private appComponent: AppComponent,
-    private activityService: ActivityService
+    private activityService: ActivityService,
+    private genericService: GenericServiceService
   ) {}
 
   get f() {
@@ -55,6 +57,19 @@ export class AuthenticationPage implements OnInit {
       email: ['', Validators.required],
       password: ['123456789'],
     });
+    PushNotifications.addListener(
+      'pushNotificationActionPerformed',
+      (notification) => {
+        this.genericService.receiveAlert(notification.notification.data.body);
+      }
+    );
+
+    PushNotifications.addListener(
+      'pushNotificationReceived',
+      (notification: PushNotificationSchema) => {
+        this.genericService.receiveAlert(notification.body);
+      }
+    );
   }
 
   onSubmit() {
@@ -158,18 +173,8 @@ export class AuthenticationPage implements OnInit {
       alert('Error on registration: ' + JSON.stringify(error));
     });
 
-    PushNotifications.addListener(
-      'pushNotificationReceived',
-      (notification: PushNotificationSchema) => {
-        alert('Push received: ' + JSON.stringify(notification));
-      }
-    );
 
-    PushNotifications.addListener(
-      'pushNotificationActionPerformed',
-      (notification: ActionPerformed) => {
-        alert('Push action performed: ' + JSON.stringify(notification));
-      }
-    );
+
+
   }
 }

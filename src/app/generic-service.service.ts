@@ -13,6 +13,17 @@ export class GenericServiceService {
     private profileService: ProfileService
   ) {}
 
+    async receiveAlert(msg:string)
+    {
+      const confirmationAlert = await this.alertController.create({
+        header: msg,
+        buttons: ['Got It'],
+      });
+
+      confirmationAlert.present();
+    }
+
+
   async sendAlert() {
     const confirmationAlert = await this.alertController.create({
       header: 'Your Alert was sent!\n You will be contacted by our team',
